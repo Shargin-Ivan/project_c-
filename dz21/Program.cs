@@ -35,15 +35,15 @@ void PrintArrayInt(int[,] arrayInt)
 }
 double[] Average(int[,] array)
 {
-    double[] average = new double[array.GetLength(0)];
-    for (int i = 0; i < array.GetLength(0); i++)
+    double[] average = new double[array.GetLength(1)];
+    for (int i = 0; i < array.GetLength(1); i++)
     {
         double sum = 0;
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(0); j++)
         {
-            sum += array[i, j];
+            sum += array[j, i];
         }
-        average[i] = sum / array.GetLength(1);
+        average[i] = sum / array.GetLength(0);
     }
     return average;
 }
